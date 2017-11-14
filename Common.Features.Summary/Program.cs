@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Common.Features.Summary.Random;
+using System;
 
 namespace Common.Features.Summary
 {
@@ -6,7 +7,10 @@ namespace Common.Features.Summary
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            //RandomUtils.RandomString();
+            Console.WriteLine(new SystemClock().UtcNow);
+
+            Console.Read();
         }
     }
 }
