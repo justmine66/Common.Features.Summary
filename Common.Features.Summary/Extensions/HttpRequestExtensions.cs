@@ -3,11 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Common.Features.Summary
+namespace Common.Features.Summary.Extensions
 {
-    public class RequestUtils
+    public static class HttpRequestExtensions
     {
-        private static bool IsAjaxRequest(HttpRequest request)
+        private static bool IsAjaxRequest(this HttpRequest request)
         {
             return string.Equals(request.Query["X-Requested-With"], "XMLHttpRequest", StringComparison.Ordinal) ||
                 string.Equals(request.Headers["X-Requested-With"], "XMLHttpRequest", StringComparison.Ordinal);

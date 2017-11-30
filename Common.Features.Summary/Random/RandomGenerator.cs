@@ -6,10 +6,17 @@ using System.Text;
 
 namespace Common.Features.Summary.Random
 {
-    public class RandomUtils
+    /// <summary>
+    /// 随机生成器
+    /// </summary>
+    public class RandomGenerator
     {
         private static readonly RandomNumberGenerator CryptoRandom = RandomNumberGenerator.Create();
 
+        /// <summary>
+        /// 生成一个随机字符串
+        /// </summary>
+        /// <returns></returns>
         public static string RandomString()
         {
             var bytes = new byte[32];
