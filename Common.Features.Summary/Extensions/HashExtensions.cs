@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace Common.Features.Summary.Extensions
 {
     /// <summary>
-    /// 散列函数扩展
+    /// 散列值函数扩展
     /// </summary>
-    public class HashExtensions
+    public static class HashExtensions
     {
         /// <summary>
         /// Creates a SHA256 hash of the specified input.
