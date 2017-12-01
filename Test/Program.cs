@@ -3,6 +3,8 @@ using Microsoft.Extensions.Primitives;
 using System.Collections.Specialized;
 using Newtonsoft.Json;
 using System.Linq;
+using Common.Features.Summary.Infrastructure;
+using Test.WeakEventHanlderTest;
 
 namespace Test
 {
@@ -10,9 +12,13 @@ namespace Test
     {
         static void Main(string[] args)
         {
-            var values = Enumerable.Range(0, 10);
+            var relate = new RelateTarget();
+            TodoEngine.Instance.Todo_changed += new WeakEventHandler<TodoEvent>(relate.TodoThing);
 
-            var purge = values.Skip(1);
+            for (int i = 0; i < 10; i++)
+            {
+                TodoEngine.Instance.TiggerChange(i);
+            }
 
             Console.Read();
         }
