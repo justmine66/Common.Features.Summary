@@ -1,6 +1,7 @@
 ﻿using Common.Features.Summary.Random;
 using System;
 using System.Globalization;
+using Common.Features.Summary.Extensions;
 
 namespace Common.Features.Summary
 {
@@ -9,7 +10,7 @@ namespace Common.Features.Summary
         static void Main(string[] args)
         {
             //RandomUtils.RandomString();
-            Console.WriteLine(new SystemClock().UtcNow);
+            Console.WriteLine(new SystemClock().UtcNow.UtcDateTime.ToEpochTime());
 
             Console.Read();
         }
